@@ -253,6 +253,15 @@ https://github.com/yousrchive/BUSINESS-INTELLIGENCE-TABLEAU/blob/main/study/img/
 ```js
 테이블 계산에서 '다음을 사용하여 계산'에는 테이블 당 계산과 패널 당 계산이 있습니다. 이에 대해 이해하는 것이 꼭 필요하기 때문에, 외부 레퍼런스를 참고하여 이 단계에서 꼭! 학습 후, 넘어가주세요 :)
 ```
+```
+테이블 - 전체 (처음부터 끝까지)
+테이블(옆) - 옆으로 처음부터 끝
+테이블(아래로) - 아래로 쭉 더하는 것임
+테이블(옆에서 아래로) - 옆으로 가면서 누적된다 그 값을 밑으로 또 누적
+패널(년도별 혹은 region별로) > 옆으로와 아래로 
+
+```
+
 
 ![테이블계산](https://velog.velcdn.com/images/eunsuh/post/8a56ab15-930d-4ad6-b5ab-74513863115f/image.png
 )
