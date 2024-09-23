@@ -1,0 +1,30 @@
+문제 1번
+
+select
+  seller_id,
+  count(distinct(order_id)) as orders
+from
+  olist_order_items_dataset
+group by
+  seller_id
+having
+  orders >= 100
+
+# 처음에는 count(*)으로 함수를 작성했더니 계속 개수가 안맞다고 오류가 발생했음
+> 강의를 group by 만 발췌해서 듣다가 보니 distinct를 놓치고 있다는 생각을 해서 바로 distinct를 적용하니 문제가 풀렸다.
+
+문제 2번
+
+select * from tips
+where size % 2 == 1
+
+나머지 함수가 기억이 안나서 파이선 size // 2  == 1 로 했더니 실행이 안됐음. 
+
+문제 3번
+select day, sum(tip) as tip_daily from tips
+group by day 
+order by tip_daily desc
+limit 1
+
+sub 쿼리를 이용하는 방법도 있겠으나 그냥 limit 으로 썼다
+
