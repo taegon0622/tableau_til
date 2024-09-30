@@ -3,7 +3,7 @@
 2) 지표를 구체화하기
 
 문제 1 
-
+/Users/gojaehyeon/Desktop/스크린샷 2024-09-30 오후 1.24.31.png
 
 select user_id, nickname, sum(price) as total_sales from USED_GOODS_BOARD as a
 inner join USED_GOODS_USER as b
@@ -12,4 +12,17 @@ group by user_id having sum(price) >= 700000
 order by total_sales
 # 조건에 완료된 주문이여서 where에 DONE 조건을 추가하지 않았음
 # join 안쓴지 됐다고 문법을 까먹었더라.. >> join 테이블 on a.열 = b.열 
+# 판매가 완료된' 이 조건이므로 = done 추가 기입해야한다!
+
+문제2 
+
+select item_id, item_name, rarity from ITEM_INFO
+where item_id not in (select ifnull(PARENT_ITEM_ID,"0") from ITEM_TREE)
+order by item_id desc
+
+# 엄청 애를 먹었던 문제임.
+# ifnull(해당 열이름, "0")으로 변환하는 함수는 처음써봤음
+
+
+문제 3
 
