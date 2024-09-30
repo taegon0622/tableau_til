@@ -1,1 +1,15 @@
+동영상 강의를 통해 얻은 내용
+1) GROUP BY ALL 함수를 사용하면 Group by 뒤에 입력하지 않아도 자동적으로 계산해줌
+2) 지표를 구체화하기
+
+문제 1 
+
+
+select user_id, nickname, sum(price) as total_sales from USED_GOODS_BOARD as a
+inner join USED_GOODS_USER as b
+on  b.USER_ID = a.WRITER_ID where status = 'DONE'
+group by user_id having sum(price) >= 700000
+order by total_sales
+# 조건에 완료된 주문이여서 where에 DONE 조건을 추가하지 않았음
+# join 안쓴지 됐다고 문법을 까먹었더라.. >> join 테이블 on a.열 = b.열 
 
