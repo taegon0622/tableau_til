@@ -3,6 +3,8 @@
 2) 지표를 구체화하기
 
 문제 1 
+![문제1](./스크린샷/문제%201.png)
+
 
 select user_id, nickname, sum(price) as total_sales from USED_GOODS_BOARD as a
 inner join USED_GOODS_USER as b
@@ -14,7 +16,7 @@ order by total_sales
 # 판매가 완료된' 이 조건이므로 = done 추가 기입해야한다!
 
 문제2 
-![문제2]()
+![문제2](./스크린샷/문제%202.png)
 select item_id, item_name, rarity from ITEM_INFO
 where item_id not in (select ifnull(PARENT_ITEM_ID,"0") from ITEM_TREE)
 order by item_id desc
@@ -24,6 +26,7 @@ order by item_id desc
 
 
 문제 3
+![문제3](./스크린샷/문제%203.png)
 SELECT ID, EMAIL, FIRST_NAME, LAST_NAME
 FROM DEVELOPERS 
 WHERE
@@ -35,4 +38,3 @@ ORDER BY
 # 잘 모르겠어서 답 보고 했는데 아직도 잘 이해가 안간다.
 # 계속해서 고민하는중이다
 # 이진법에 따라 a&b가 1인 경우 1을 도출하는 방식으로 나오는 거라고 한다!
-
