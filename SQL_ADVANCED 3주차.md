@@ -5,28 +5,32 @@
 문제 1 
 ![문제1](./스크린샷/문제%201.png)
 
-
+```
 select user_id, nickname, sum(price) as total_sales from USED_GOODS_BOARD as a
 inner join USED_GOODS_USER as b
 on  b.USER_ID = a.WRITER_ID where status = 'DONE'
 group by user_id having sum(price) >= 700000
 order by total_sales
+```
+
 # 조건에 완료된 주문이여서 where에 DONE 조건을 추가하지 않았음
 # join 안쓴지 됐다고 문법을 까먹었더라.. >> join 테이블 on a.열 = b.열 
 # 판매가 완료된' 이 조건이므로 = done 추가 기입해야한다!
 
 문제2 
 ![문제2](./스크린샷/문제%202.png)
+```
 select item_id, item_name, rarity from ITEM_INFO
 where item_id not in (select ifnull(PARENT_ITEM_ID,"0") from ITEM_TREE)
 order by item_id desc
-
+```
 # 엄청 애를 먹었던 문제임.
 # ifnull(해당 열이름, "0")으로 변환하는 함수는 처음써봤음
 
 
 문제 3
 ![문제3](./스크린샷/문제%203.png)
+```
 SELECT ID, EMAIL, FIRST_NAME, LAST_NAME
 FROM DEVELOPERS 
 WHERE
@@ -34,7 +38,7 @@ WHERE
     OR SKILL_CODE & (SELECT CODE FROM SKILLCODES WHERE NAME = 'C#')
 ORDER BY
     ID
-
+```
 # 잘 모르겠어서 답 보고 했는데 아직도 잘 이해가 안간다.
 # 계속해서 고민하는중이다
 # 이진법에 따라 a&b가 1인 경우 1을 도출하는 방식으로 나오는 거라고 한다!
