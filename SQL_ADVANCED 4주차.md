@@ -1,5 +1,5 @@
 문제 1
-![screen](./)
+![screen](./스크린샷/3주차%20문제1.png)
 
 ```
 select a.item_id, item_name from ITEM_INFO as a
