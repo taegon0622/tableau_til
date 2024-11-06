@@ -13,3 +13,7 @@ ORDER BY FOOD_TYPE DESC
 >> 따라서 where 조건절로 묶어서 조회해야하는 것이다.
 3) favorites로 이름을 변경하더라도 sql은 favorites열로 인식하지 못한다. 
 >> 따라서 where 조건절로 묶어서 조회해야한다.
+
+
+# 문제 2
+## 
