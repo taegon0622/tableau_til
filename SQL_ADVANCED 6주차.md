@@ -24,6 +24,7 @@ WITH RankedRest AS (
         ROW_NUMBER() OVER (PARTITION BY FOOD_TYPE ORDER BY FAVORITES DESC, REST_ID) AS rnk
     FROM REST_INFO
 )
+
 /* with 구문을 이용해서 새로운 테이블을 제작한다. 
 이때 원하는 열을 선택하여 자료를 출력하며, row_number를 이용해 각 열의 행을 출력하게끔 한다. 이때 음식점 종류에 따라 구분하고, row_num을 통해 순서를 부여하였으므로 각 파티션 별로 순위가 생성된다*/ 
 
@@ -57,11 +58,18 @@ dense_rank는 2등이 2명 있더라도 다음 순위는 3으로 입력된다.
 
 ![스크린샷](./스크린샷/스크린샷%202024-11-12%20오후%2010.16.10.png)
 
-select sum(score) as score, a.EMP_NO, EMP_NAME, POSITION, EMAIL
+select 
+    sum(score) as score, 
+    a.EMP_NO, 
+    EMP_NAME, 
+    POSITION, EMAIL
 from HR_EMPLOYEES a
+
 inner join HR_GRADE b
-on a.EMP_NO = b.EMP_NO
+    on a.EMP_NO = b.EMP_NO
+
 group by a.EMP_NO 
+
 order by score desc
 limit 1
 
