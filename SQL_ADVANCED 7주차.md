@@ -14,7 +14,7 @@
 
 SELECT ANIMAL_TYPE, IFNULL(NAME,"No name"), SEX_UPON_INTAKE  from ANIMAL_INS
 order by ANIMAL_ID
--- ifnull은 a값이 null 인 경우 b의 값으로 치환하는 함수이다. 그리고 IFNULL은 select 문에서 작성한다. 
+-- ifnull은 a값이 null 인 경우 b의 값으로 치환하는 함수이다. 그리고 IFNULL은 select 문에서 작성할 수 있다. 
 ```
 
 같은 문제를, CASE WHEN 문법을 사용하여 해결해주세요
